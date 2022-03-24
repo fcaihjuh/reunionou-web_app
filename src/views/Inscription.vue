@@ -10,7 +10,7 @@
                     </div>
     <form class="box" @submit.prevent="validation"><!-- form pour interagir avec le formulaire-->
     <div class="field">
-      <label for class="label">Fullname</label>
+      <label for class="label">Prénom Nom</label>
       <div class="control has-icons-left">
         <input type="text" v-model="fullname" class="input" required />
         <span class="icon is-small is-left">
@@ -28,7 +28,7 @@
         </div>
       </div>
       <div class="field">
-        <label for class="label">Username</label>
+        <label for class="label">Pseudo</label>
         <div class="control has-icons-left">
             <input type="text" v-model="username" class="input" required />
             <span class="icon is-small is-left">
@@ -37,7 +37,7 @@
         </div>
       </div>
       <div class="field">
-        <label for class="label">Password</label>
+        <label for class="label">Mot de passe</label>
         <div class="control has-icons-left">
             <input type="password" v-model="password" class="input" required />
             <span class="icon is-small is-left">
@@ -61,10 +61,10 @@
 export default {
     data() {
         return {
-            fullname : 'Alexis Debard',
-            email : 'alexis@gmail.com',
-            username : 'alexisd', 
-            password : 'test'
+            fullname : '',
+            email : '',
+            username : '', 
+            password : ''
         }
     },
     methods : {

@@ -19,7 +19,7 @@
                 </div>
                 </div>
                 <div class="field">
-                    <label for class="label">Password</label>
+                    <label for class="label">Mot de passe</label>
                     <div class="control has-icons-left">
                     <input type="password" v-model="password" class="input" required />
                     <span class="icon is-small is-left">
@@ -42,8 +42,8 @@
 export default {
     data(){
         return {
-            email: "alexis@gmail.com",
-            password: "test"
+            email: "",
+            password: ""
         }
     },
 

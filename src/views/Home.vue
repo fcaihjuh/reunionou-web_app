@@ -1,6 +1,6 @@
 <template>
   <div>
-      <Navigation />
+      <Header />
     <h2>Home</h2>
     <p>
       Connecté en tant que <b>{{ $store.state.member.fullname }}</b>
