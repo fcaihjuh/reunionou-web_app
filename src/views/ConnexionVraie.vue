@@ -2,13 +2,14 @@
 <section class="hero Is-warning is-fullheight">
     <div class="hero-body">
         <div class="container">
-            <div class="colums is-centered">
+            <div class="columns is-centered">
                 <div class="column is-5-tablet is-4-desktop is-3-widescreen">
                     <div class="box">
                         <h1 class="title">Reunionou</h1>
                         <h2 class="subtitle">Se connecter</h2> 
                     </div>  
-                <form class="box" @submit.prevent="validation"><!-- form pour interagir avec le formulaire-->
+                <form class="box" @submit.prevent="validation">
+                    <!-- form pour interagir avec le formulaire -->
                 <div class="field">
                 <label for class="label">Email</label>
                 <div class="control has-icons-left">

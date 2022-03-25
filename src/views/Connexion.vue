@@ -1,15 +1,27 @@
 <template>
-<div class="container">
-<Header />
-<h2>Mon profil</h2>
-<div class="columns is-mobile is-centered">
-  <div class="column is-half">
-    <p class="bd-notification is-primary">
-      <code class="html">is-half</code><br>
-    </p>
+  <div class="container">
+    <Header />
+    <div class="columns is-centered">
+      <div class="column is-half">
+        <article class="media notification is-warning">
+            <figure class="media-left">
+              <span class="icon">
+<i class="fa far fa-address-card"></i>
+</span>
+            </figure>
+            <div class="media-content">
+              <div class="content">
+                <h2 class="title">Mon profil</h2>
+                <p class="is-size-5">
+                  Prénom nom : <b>{{ $store.state.member.fullname }}</b> <br />
+                  Email : <b>{{ $store.state.member.email }}</b>
+                </p>
+              </div>
+            </div>
+        </article>
+      </div>
+    </div>
   </div>
-</div>
-</div>
 </template>
 
 <script>
@@ -30,7 +42,6 @@ export default {
 
 <style scoped lang="scss">
 h2 {
-  text-align: center;
   font-size: 20px;
 }
 </style>
