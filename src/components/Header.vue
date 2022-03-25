@@ -15,7 +15,7 @@
         </div>
       </div>
       <div class="navbar-item">
-      <div>Connecté(e) en tant que
+      <div>
           <b>{{$store.state.member.fullname}}</b>
           </div>
       </div>

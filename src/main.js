@@ -31,6 +31,9 @@ Vue.prototype.$api.interceptors.response.use(function(response){
 
 Vue.config.productionTip = false
 
+//Chargement global du composant Navigation
+Vue.component('Header', ()=>import('@/components/Header.vue'));
+
 new Vue({
   router,
   store,
