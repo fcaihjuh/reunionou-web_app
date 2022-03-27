@@ -5,6 +5,8 @@
     </div>
 
     <div class="navbar-start">
+      <router-link class="navbar-item has-background-warning" to="creerevenement"
+        >Créer un événement</router-link>
       <router-link class="navbar-item has-background-warning" to="profil"
         >Gérer mon profil</router-link
       >

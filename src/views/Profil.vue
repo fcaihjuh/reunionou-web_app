@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <Header />
+    <br>
     <div class="columns is-centered">
       <div class="column is-half">
         <article class="media notification is-warning">
