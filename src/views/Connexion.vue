@@ -3,21 +3,68 @@
     <Header />
     <div class="columns is-centered">
       <div class="column is-half">
-        <article class="media notification is-warning">
-            <figure class="media-left">
-              <span class="icon">
-<i class="fa far fa-address-card"></i>
-</span>
-            </figure>
-            <div class="media-content">
-              <div class="content">
-                <h2 class="title">Mon profil</h2>
-                <p class="is-size-5">
-                  Prénom nom : <b>{{ $store.state.member.fullname }}</b> <br />
-                  Email : <b>{{ $store.state.member.email }}</b>
-                </p>
-              </div>
+        <article class="media notification">
+          <figure class="media-left">
+            <span class="icon">
+              <i class="fa fa-calendar" aria-hidden="true"></i
+            ></span>
+          </figure>
+          <div class="media-content">
+            <div class="content">
+              <h2 class="title">Créer un événement</h2>
+              <form class="box" @submit.prevent="validation">
+                <!-- form pour interagir avec le formulaire -->
+                <div class="field">
+                  <label for class="label">Titre</label>
+                  <div class="control has-icons-left">
+                    <input
+                      type="username"
+                      v-model="username"
+                      class="input"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="field">
+                  <label for class="label">Description</label>
+                  <div class="control has-icons-left">
+                    <input
+                      type="description"
+                      v-model="description"
+                      class="input"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="field">
+                  <label for class="label">Où</label>
+                  <div class="control has-icons-left">
+                    <input
+                      type="username"
+                      v-model="username"
+                      class="input"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="field">
+                  <label for class="label">Quand</label>
+                  <div class="control has-icons-left">
+                    <input
+                      type="username"
+                      v-model="username"
+                      class="input"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="buttons">
+                  <button class="button">Créer</button>
+                  <router-link class="button has-background-white" to="home">Annuler</router-link>
+                </div>
+              </form>
             </div>
+          </div>
         </article>
       </div>
     </div>
@@ -41,7 +88,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-h2 {
-  font-size: 20px;
+.button {
+  background-color: rgb(122, 180, 245);
 }
 </style>
