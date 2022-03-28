@@ -38,6 +38,17 @@
                   </div>
                 </div>
                 <div class="field">
+                  <label for class="label">Heure</label>
+                  <div class="control has-icons-left">
+                    <input
+                      type="description"
+                      v-model="description"
+                      class="input"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="field">
                   <label for class="label">Où</label>
                   <div class="control has-icons-left">
                     <input
