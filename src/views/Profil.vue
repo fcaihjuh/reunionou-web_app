@@ -33,7 +33,7 @@ export default {
     };
   },
   mounted() {
-    this.$api.get("users").then((response) => {
+    this.$api.get("member/id").then((response) => {
       this.users = response.data;
       console.log(this.users);
     });
