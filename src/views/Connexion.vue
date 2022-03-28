@@ -54,8 +54,7 @@ export default {
                 email:this.email,
                 password:this.password,
             };
-
-            this.$api.get('/users')
+            this.$api.get('/signin')
             .then(response => {
                 console.log(response)
                 //this.$store.commit('setToken', response.data.token)

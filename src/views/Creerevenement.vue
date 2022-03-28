@@ -84,19 +84,31 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      users: [],
+    export default {
+  components: {  },
+      data() {
+        return {
+          conversation: {
+            topic: "",
+            label: "",
+          },
+        };
+      },
+      methods: {
+        validation() {
+          this.$api
+            .post("channels", this.conversation)
+            .then((response) => {
+              this.$router.push({name:'Conversation', params:{id:response.data.id}})
+            })
+            .catch((error) => {
+              alert(error.response.data.message);
+            });
+        },
+      },
     };
-  },
-  mounted() {
-    this.$api.get("users").then((response) => {
-      this.users = response.data;
-      console.log(this.users);
-    });
-  },
-};
+</script>
+
 </script>
 
 <style scoped lang="scss">

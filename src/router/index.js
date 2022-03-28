@@ -27,8 +27,8 @@ const routes = [
   },
   {
     path: '/creerevenement',
-    name: 'Creerevenement',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Creerevenement.vue')
+    name: 'CreerEvenement',
+    component: () => import(/* webpackChunkName: "about" */ '../views/CreerEvenement.vue')
   }
 ]
 
