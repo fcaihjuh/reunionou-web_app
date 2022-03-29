@@ -10,6 +10,7 @@
       <router-link class="navbar-item has-background-warning" to="profil"
         >Gérer mon profil</router-link
       >
+      <router-link class="navbar-item has-background-warning" to="/creer">Mes événements</router-link>
     </div>
 
     <div class="navbar-end">
@@ -26,7 +27,7 @@
         </div>
       </div>
     </div>
-    <figure class="image is-48x48">
+    <figure class="image is-64x64">
       <img src="../assets/reunionou.png" />
     </figure>
   </nav>

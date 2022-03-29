@@ -31,7 +31,7 @@ export default {
     };
   },
   mounted() {
-    this.$api.get("channels").then((response) => {
+    this.$api.get("events").then((response) => {
       this.evenements = response.data;
     });
   },

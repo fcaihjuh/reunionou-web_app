@@ -34,6 +34,20 @@
                 </div>
               </div>
               <div class="field">
+                <label for class="label">Pseudo</label>
+                <div class="control has-icons-left">
+                  <input
+                    type="text"
+                    v-model="username"
+                    class="input"
+                    required
+                  />
+                  <span class="icon is-small is-left">
+                    <i class="fa fa-envelope"></i>
+                  </span>
+                </div>
+              </div>
+              <div class="field">
                 <label for class="label">Mot de passe</label>
                 <div class="control has-icons-left">
                   <input
@@ -67,6 +81,7 @@ export default {
     return {
       fullname: "",
       email: "",
+      username: "",
       password: "",
     };
   },
@@ -76,6 +91,7 @@ export default {
         //pour appeler l'api ($api), requete en post
         fullname: this.fullname,
         email: this.email,
+        username: this.username,
         password: this.password,
       };
       this.$api

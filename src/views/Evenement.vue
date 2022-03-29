@@ -40,7 +40,7 @@ export default {
   },
     methods:{
     chargerEvenement(){
-      this.$api.get(`channels/${this.$route.params.id}`).then((response) => {
+      this.$api.get(`event/${this.$route.params.id}`).then((response) => {
       this.evenement = response.data;
       this.chargerMessage();
       });

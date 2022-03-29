@@ -5,12 +5,12 @@
       <div class="container">
         <div class="columns is-centered">
           <div class="column is-12-tablet is-11-desktop is-10-widescreen">
-            <h4 class="title is-4 has-text-centered">Modifier l'évènement'</h4>
+            <h4 class="title is-4 has-text-centered">Modifier l'événement'</h4>
             <form class="box" @submit.prevent="modifierEvenement">
                            <div class="field">
                 <label class="label">Titre</label>
                 <div class="control">
-                  <input class="input" v-model="modification.topic" />
+                  <input class="input" v-model="modifierEvenement.topic" />
                 </div>
               </div>
               <div class="field">
@@ -75,7 +75,7 @@ export default {
       //Si aucune modification n'est faite sur le sujet et label, leurs ancienne valeurs restent ainsi.
     modifierEvenement() {
       this.$api
-        .put(`channels/${this.idEvenement}`,this.modifierEvenement)
+        .put(`event/${this.idEvenement}`,this.modifierEvenement)
         .then(() => {
         this.$router.push('/');
         })

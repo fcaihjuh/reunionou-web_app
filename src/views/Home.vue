@@ -1,6 +1,6 @@
 <template>
   <div>
-      <Header/>
+      <Header />
       <section class="section">
         <template v-for="evenement in evenements">
             <Evenement :key="evenement.id" :evenement="evenement" />
