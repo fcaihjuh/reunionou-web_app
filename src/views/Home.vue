@@ -11,6 +11,9 @@
 
 <script>
 export default {
+  methods: {
+    Evenement,
+  },
   data() {
     return {
       evenements: [],

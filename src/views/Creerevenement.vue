@@ -15,65 +15,42 @@
               <h2 class="title">Créer un événement</h2>
               <form class="box" @submit.prevent="validation">
                 <!-- form pour interagir avec le formulaire -->
-                <div class="field">
-                  <label for class="label">Titre</label>
-                  <div class="control has-icons-left">
-                    <input
-                      type="username"
-                      v-model="username"
-                      class="input"
-                      required
-                    />
-                  </div>
+                              <div class="field">
+                <label class="label">Titre</label>
+                <div class="control">
+                  <input class="input" v-model="evenement.topic" />
                 </div>
-                <div class="field">
-                  <label for class="label">Description</label>
-                  <div class="control has-icons-left">
-                    <input
-                      type="description"
-                      v-model="description"
-                      class="input"
-                      required
-                    />
-                  </div>
+              </div>
+              <div class="field">
+                <label class="label">Description</label>
+                <div class="control">
+                  <input class="input" v-model="evenement.label" />
                 </div>
-                <div class="field">
-                  <label for class="label">Heure</label>
-                  <div class="control has-icons-left">
-                    <input
-                      type="description"
-                      v-model="description"
-                      class="input"
-                      required
-                    />
-                  </div>
+              </div>
+              <div class="field">
+                <label class="label">Lieu</label>
+                <div class="control">
+                  <input class="input" v-model="evenement.place" />
                 </div>
-                <div class="field">
-                  <label for class="label">Où</label>
-                  <div class="control has-icons-left">
-                    <input
-                      type="username"
-                      v-model="username"
-                      class="input"
-                      required
-                    />
-                  </div>
+              </div>
+               <div class="field">
+                <label class="label">Date</label>
+                <div class="control">
+                  <input class="input" v-model="evenement.date" />
                 </div>
-                <div class="field">
-                  <label for class="label">Quand</label>
-                  <div class="control has-icons-left">
-                    <input
-                      type="username"
-                      v-model="username"
-                      class="input"
-                      required
-                    />
-                  </div>
+              </div>
+               <div class="field">
+                <label class="label">Heure</label>
+                <div class="control">
+                  <input class="input" v-model="evenement.time" />
                 </div>
-                <div class="buttons">
-                  <button class="button">Créer</button>
-                  <router-link class="button has-background-white" to="home">Annuler</router-link>
-                </div>
+              </div>
+              <div class="buttons">
+                <button class="button is-info is-outlined">Créer</button>
+                <router-link class="button is-outlined" to="/"
+                  >Annuler</router-link
+                >
+              </div>
               </form>
             </div>
           </div>
@@ -88,18 +65,21 @@
   components: {  },
       data() {
         return {
-          conversation: {
+          evenement: {
             topic: "",
             label: "",
+            place:"",
+            date:"",
+            time:"",
           },
         };
       },
       methods: {
         validation() {
           this.$api
-            .post("channels", this.conversation)
+            .post("createevent", this.evenement)
             .then((response) => {
-              this.$router.push({name:'Conversation', params:{id:response.data.id}})
+              this.$router.push({name:'Evenement', params:{id:response.data.id}})
             })
             .catch((error) => {
               alert(error.response.data.message);

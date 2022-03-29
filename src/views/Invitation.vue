@@ -51,7 +51,7 @@
             </div>
             <div class="box mt-6">
               <h4 class="title is-6 title-chat">
-                Conversation de l'évènement
+                Coommentaires de l'évènement
                 <input class="input box mt-6" type="text" placeholder="Votre message">
                 <div class="box mt-6">
                   <article class="media ">
