@@ -67,7 +67,6 @@ export default {
     return {
       fullname: "",
       email: "",
-      username: "",
       password: "",
     };
   },
@@ -77,7 +76,6 @@ export default {
         //pour appeler l'api ($api), requete en post
         fullname: this.fullname,
         email: this.email,
-        username: this.username,
         password: this.password,
       };
       this.$api
