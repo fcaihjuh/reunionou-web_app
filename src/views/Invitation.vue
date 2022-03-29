@@ -24,7 +24,7 @@
               </footer>
             </div>
             <h4 class="title is-5 has-text-centered mb-20">
-              Localiser l'endroit sur la MAP :
+              Localisation :
             </h4>
             <div class="box" id="map" v-if="ready">
               <template>
