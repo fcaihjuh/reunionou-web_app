@@ -22,7 +22,7 @@
               <div class="field">
                 <label class="label">Email</label>
                 <div class="control">
-                  <input class="input" v-model="modifierProfil.mail" />
+                  <input class="input" v-model="modifierProfil.email" />
                 </div>
               </div>
                <div class="field">
@@ -33,7 +33,7 @@
               </div>
               <div class="buttons">
                 <button class="button is-info is-outlined">Modifier</button>
-                <router-link class="button is-outlined" to="/home"
+                <router-link class="button is-outlined" to="/"
                   >Annuler</router-link
                 >
               </div>
