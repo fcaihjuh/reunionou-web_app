@@ -25,15 +25,6 @@
                 </div>
               </div>
               <div class="field">
-                <label for class="label">Email</label>
-                <div class="control has-icons-left">
-                  <input type="email" v-model="email" class="input" required />
-                  <span class="icon is-small is-left">
-                    <i class="fa fa-envelope"></i>
-                  </span>
-                </div>
-              </div>
-              <div class="field">
                 <label for class="label">Pseudo</label>
                 <div class="control has-icons-left">
                   <input
@@ -42,6 +33,15 @@
                     class="input"
                     required
                   />
+                  <span class="icon is-small is-left">
+                    <i class="fa fa-user-o"></i>
+                  </span>
+                </div>
+              </div>
+              <div class="field">
+                <label for class="label">Email</label>
+                <div class="control has-icons-left">
+                  <input type="email" v-model="email" class="input" required />
                   <span class="icon is-small is-left">
                     <i class="fa fa-envelope"></i>
                   </span>
@@ -87,6 +87,22 @@ export default {
   },
   methods: {
     validation() {
+          this.$api
+        .post("members", {
+          fullname: this.fullname,
+          username: this.username,
+          email: this.email,
+          password: this.password,
+        })
+        .then((response) => {
+          //console.log(response.data);
+          //alert("Votre compte a ete cree. Vous pouvez vous connecter");
+        })
+        .catch((error) => {
+         // alert(error.response.data.message);
+          this.$router.push("/");
+        });
+    },/*
       let donnees = {
         //pour appeler l'api ($api), requete en post
         fullname: this.fullname,
@@ -103,10 +119,9 @@ export default {
         })
         .catch((error) => {
           alert(error.response.data.message);
-        });
+        });*/
     },
-  },
-};
+  };
 </script>
 
 <style></style>
