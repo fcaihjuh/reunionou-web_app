@@ -14,9 +14,11 @@
               <div class="content">
                 <h2 class="title">Mon profil</h2>
                 <p class="is-size-5">
-                  Prénom nom : <b>{{ $store.state.member.fullname }}</b> <br />
-                  Email : <b>{{ $store.state.member.email }}</b>
+                  Prénom nom : <b>{{ $store.state.member.fullname }}</b> <br>
+                  Email : <b>{{ $store.state.member.email }}</b><br>
+                  Pseudo : <b>{{ $store.state.member.username }}</b>
                 </p>
+                <button v-on:click="ok">Modifier</button>
               </div>
             </div>
         </article>
