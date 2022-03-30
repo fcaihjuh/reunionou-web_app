@@ -11,7 +11,7 @@
         <router-link :to="{name:'Member', params:{idMembre:member.id}}" :key="member.id" class="">
           <strong> {{member.fullname}} </strong>
         </router-link>
-        <small>{{member.email}}</small> <small>{{dateMessage}}</small>
+        <small>{{member.email}}</small>
         <br>
         {{message.message}}
       </p>

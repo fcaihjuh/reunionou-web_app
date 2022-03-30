@@ -48,22 +48,14 @@
 export default {
   data() {
     return {
-        idEvenement : this.$route.params.id,
-      modifierEvenement: {
-        label: "",
-        topic: "",
-        place:"",
-        date:"",
-        time:"",
+        idProfil : this.$route.params.id,
+      modifierProfil: {
+        fullname: "",
+        username: "",
+        email:"",
+        password:"",
       },
     };
-  },
-  mounted(){
-      //Je récupère le label et le sujet avant modification pour les afficher dans le input
-      this.$api.get(`titre/${this.idEvenement}`).then((response) => {
-          this.modifierEvenement.label = response.data.label;
-          this.modifierEvenement.topic = response.data.topic;
-      })
   },
   methods: {
       //Si aucune modification n'est faite sur le sujet et label, leurs ancienne valeurs restent ainsi.

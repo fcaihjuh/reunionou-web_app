@@ -26,6 +26,11 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/Profil.vue')
   },
   {
+    path: '/modifierprofil',
+    name: 'ModifierProfil',
+    component: () => import(/* webpackChunkName: "about" */ '../views/ModifierProfil.vue')
+  },
+  {
     path: '/creerevenement',
     name: 'CreerEvenement',
     component: () => import(/* webpackChunkName: "about" */ '../views/CreerEvenement.vue')
