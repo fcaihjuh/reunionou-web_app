@@ -17,8 +17,11 @@
                   Prénom nom : <b>{{ $store.state.member.fullname }}</b> <br>
                   Email : <b>{{ $store.state.member.email }}</b><br>
                   Pseudo : <b>{{ $store.state.member.username }}</b>
+                  Mot de passe : <b>{{ $store.state.member.password }}</b>
+
                 </p>
-                <button v-on:click="ok">Modifier</button>
+                              <router-link div="box" :to="{name : 'ModifierProfil', params :{id: member.id}}" class="button is-success is-small" >Modifier</router-link>    
+                              <button @click="deleteConversation" class="button button is-danger is-small" >Supprimer</button>              
               </div>
             </div>
         </article>
@@ -32,6 +35,7 @@ export default {
   data() {
     return {
       users: [],
+      member:false,
     };
   },
   mounted() {
