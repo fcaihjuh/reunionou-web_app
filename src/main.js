@@ -10,7 +10,7 @@ import './assets/custom.scss'
 Vue.prototype.$api = axios.create({
   baseURL : 'http://docketu.iutnc.univ-lorraine.fr:62640/',
   params : {},
-  headers : {}
+  //headers : {}
 });
 
 Vue.prototype.$api.interceptors.request.use(function(config){

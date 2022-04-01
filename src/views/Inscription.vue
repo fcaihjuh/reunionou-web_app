@@ -81,33 +81,15 @@ export default {
     return {
       fullname: "",
       email: "",
-      username: "",
       password: "",
     };
   },
   methods: {
     validation() {
-          this.$api
-        .post("members", {
-          fullname: this.fullname,
-          username: this.username,
-          email: this.email,
-          password: this.password,
-        })
-        .then((response) => {
-          //console.log(response.data);
-          //alert("Votre compte a ete cree. Vous pouvez vous connecter");
-        })
-        .catch((error) => {
-         // alert(error.response.data.message);
-          this.$router.push("/");
-        });
-    },/*
       let donnees = {
         //pour appeler l'api ($api), requete en post
         fullname: this.fullname,
         email: this.email,
-        username: this.username,
         password: this.password,
       };
       this.$api
@@ -119,8 +101,9 @@ export default {
         })
         .catch((error) => {
           alert(error.response.data.message);
-        });*/
+        });
     },
+  },
   };
 </script>
 

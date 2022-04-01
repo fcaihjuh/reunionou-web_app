@@ -18,36 +18,30 @@
                               <div class="field">
                 <label class="label">Titre</label>
                 <div class="control">
-                  <input class="input" v-model="evenement.topic" />
+                  <input type="text" class="input" v-model="evenement.title" />
                 </div>
               </div>
               <div class="field">
                 <label class="label">Description</label>
                 <div class="control">
-                  <input class="input" v-model="evenement.label" />
+                  <input type="text" class="input" v-model="evenement.desc" />
                 </div>
               </div>
               <div class="field">
                 <label class="label">Lieu</label>
                 <div class="control">
-                  <input class="input" v-model="evenement.place" />
+                  <input type="text" class="input" v-model="evenement.place" />
                 </div>
               </div>
                <div class="field">
                 <label class="label">Date</label>
                 <div class="control">
-                  <input class="input" v-model="evenement.date" />
-                </div>
-              </div>
-               <div class="field">
-                <label class="label">Heure</label>
-                <div class="control">
-                  <input class="input" v-model="evenement.time" />
+                  <input type="date" class="input" v-model="evenement.date" />
                 </div>
               </div>
               <div class="buttons">
                 <button class="button is-info is-outlined">Créer</button>
-                <router-link class="button is-outlined" to="/"
+                <router-link class="button is-outlined" to="/home"
                   >Annuler</router-link
                 >
               </div>
@@ -66,18 +60,17 @@
       data() {
         return {
           evenement: {
-            topic: "",
-            label: "",
+            title: "",
+            desc: "",
             place:"",
             date:"",
-            time:"",
           },
         };
       },
       methods: {
         validation() {
           this.$api
-            .post("createevent", this.evenement)
+            .post(`event/${this.id}`, this.evenement)
             .then((response) => {
               this.$router.push({name:'Evenement', params:{id:response.data.id}})
             })

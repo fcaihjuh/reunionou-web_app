@@ -16,7 +16,6 @@
                 <p class="is-size-5">
                   Prénom nom : <b>{{ $store.state.member.fullname }}</b> <br>
                   Email : <b>{{ $store.state.member.email }}</b><br>
-                  Pseudo : <b>{{ $store.state.member.username }}</b>
                   Mot de passe : <b>{{ $store.state.member.password }}</b>
 
                 </p>
@@ -39,7 +38,7 @@ export default {
     };
   },
   mounted() {
-    this.$api.get("member/id").then((response) => {
+    this.$api.get(`user/${this.idEvenement}`).then((response) => {
       this.users = response.data;
       //console.log(this.users);
     });

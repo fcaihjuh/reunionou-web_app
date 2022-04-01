@@ -66,7 +66,7 @@ export default {
   },
   mounted(){
       //Je récupère le label et le sujet avant modification pour les afficher dans le input
-      this.$api.get(`titre/${this.idEvenement}`).then((response) => {
+      this.$api.get(`event/${this.idEvenement}`).then((response) => {
           this.modifierEvenement.label = response.data.label;
           this.modifierEvenement.topic = response.data.topic;
       })
