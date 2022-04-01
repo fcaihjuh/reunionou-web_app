@@ -25,23 +25,9 @@
                 </div>
               </div>
               <div class="field">
-                <label for class="label">Pseudo</label>
-                <div class="control has-icons-left">
-                  <input
-                    type="text"
-                    v-model="username"
-                    class="input"
-                    required
-                  />
-                  <span class="icon is-small is-left">
-                    <i class="fa fa-user-o"></i>
-                  </span>
-                </div>
-              </div>
-              <div class="field">
                 <label for class="label">Email</label>
                 <div class="control has-icons-left">
-                  <input type="email" v-model="email" class="input" required />
+                  <input type="email" v-model="mail" class="input" required />
                   <span class="icon is-small is-left">
                     <i class="fa fa-envelope"></i>
                   </span>
@@ -80,7 +66,7 @@ export default {
   data() {
     return {
       fullname: "",
-      email: "",
+      mail: "",
       password: "",
     };
   },
@@ -89,7 +75,7 @@ export default {
       let donnees = {
         //pour appeler l'api ($api), requete en post
         fullname: this.fullname,
-        email: this.email,
+        mail: this.mail,
         password: this.password,
       };
       this.$api

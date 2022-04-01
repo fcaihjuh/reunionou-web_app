@@ -13,7 +13,7 @@
                 <div class="field">
                 <label for class="label">Email</label>
                 <div class="control has-icons-left">
-                    <input type="email" v-model="email" class="input" required />
+                    <input type="email" v-model="mail" class="input" required />
                     <span class="icon is-small is-left">
                     <i class="fa fa-envelope"></i>
                     </span>
@@ -44,14 +44,14 @@
 export default {
     data(){
         return {
-            email: "",
+            mail: "",
             password: ""
         }
     },
      methods: {
         validation(){
             let donnees = {
-                email:this.email,
+                mail:this.mail,
                 password:this.password,
             };
             this.$api.post('/signin')

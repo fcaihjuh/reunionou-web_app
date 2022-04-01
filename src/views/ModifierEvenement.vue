@@ -10,13 +10,13 @@
                            <div class="field">
                 <label class="label">Titre</label>
                 <div class="control">
-                  <input class="input" v-model="modifierEvenement.topic" />
+                  <input class="input" v-model="modifierEvenement.title" />
                 </div>
               </div>
               <div class="field">
                 <label class="label">Description</label>
                 <div class="control">
-                  <input class="input" v-model="modifierEvenement.label" />
+                  <input class="input" v-model="modifierEvenement.desc" />
                 </div>
               </div>
               <div class="field">
@@ -29,12 +29,6 @@
                 <label class="label">Date</label>
                 <div class="control">
                   <input class="input" v-model="modifierEvenement.date" />
-                </div>
-              </div>
-               <div class="field">
-                <label class="label">Heure</label>
-                <div class="control">
-                  <input class="input" v-model="modifierEvenement.heure" />
                 </div>
               </div>
               <div class="buttons">
@@ -56,23 +50,24 @@ export default {
     return {
         idEvenement : this.$route.params.id,
       modifierEvenement: {
-        label: "",
-        topic: "",
+        title: "",
+        desc: "",
         place:"",
         date:"",
-        heure:"",
       },
     };
   },
   mounted(){
-      //Je récupère le label et le sujet avant modification pour les afficher dans le input
-      this.$api.get(`event/${this.idEvenement}`).then((response) => {
-          this.modifierEvenement.label = response.data.label;
-          this.modifierEvenement.topic = response.data.topic;
+      //Je récupère les données avant modification pour les afficher dans le input
+      this.$api.post(`event`).then((response) => {
+          this.modifierEvenement.title = response.data.title;
+          this.modifierEvenement.desc = response.data.desc;
+          this.modifierEvenement.place = response.data.place;
+          this.modifierEvenement.date = response.data.date;
       })
   },
   methods: {
-      //Si aucune modification n'est faite sur le sujet et label, leurs ancienne valeurs restent ainsi.
+      //Si aucune modification n'est faite, leurs ancienne valeurs restent ainsi.
     modifierEvenement() {
       this.$api
         .put(`event/${this.idEvenement}`,this.modifierEvenement)
