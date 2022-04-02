@@ -14,15 +14,9 @@
                 </div>
               </div>
               <div class="field">
-                <label class="label">Pseudo</label>
-                <div class="control">
-                  <input class="input" v-model="modifierProfil.username" />
-                </div>
-              </div>
-              <div class="field">
                 <label class="label">Email</label>
                 <div class="control">
-                  <input class="input" v-model="modifierProfil.email" />
+                  <input class="input" v-model="modifierProfil.mail" />
                 </div>
               </div>
                <div class="field">
@@ -51,8 +45,7 @@ export default {
         idProfil : this.$route.params.id,
       modifierProfil: {
         fullname: "",
-        username: "",
-        email:"",
+        mail:"",
         password:"",
       },
     };
