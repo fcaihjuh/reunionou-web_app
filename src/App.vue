@@ -22,7 +22,7 @@ export default {
       this.seConnecter();
     } else {
       this.$api
-        .get(`users/${this.$store.state.member.id}/signin`)
+        .get(`signin`)
         .then(this.demarrer)
         .catch(this.seConnecter);
     }
@@ -33,7 +33,7 @@ export default {
       this.$store.commit("setReady", true);
     },
     demarrer() {
-      this.$api.get("members").then((response) => {
+      this.$api.get("users").then((response) => {
         this.$store.commit("setMembers", response.data);
         this.ready();
       });

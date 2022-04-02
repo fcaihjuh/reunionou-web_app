@@ -13,7 +13,7 @@
                   </div>
                   <div class="media-content">
                       <p class="title is-4">{{member.fullname}}</p>
-                      <p class="subtitle is-6">{{member.email}}</p>
+                      <p class="subtitle is-6">{{member.mail}}</p>
                     <p class="subtitle is-6">Membre depuis le {{created_at}}</p> 
                   </div>
                   

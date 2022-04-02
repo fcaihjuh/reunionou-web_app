@@ -44,21 +44,17 @@
 export default {
     data(){
         return {
-            mail: "",
-            password: ""
+            mail: "lisa@duchard.com",
+            password: "test"
         }
     },
      methods: {
         validation(){
-            let donnees = {
-                mail:this.mail,
-                password:this.password,
-            };
-            this.$api.post('/signin')
+            this.$api.post('signin')
             .then(response => {
                 console.log(response)
-                //this.$store.commit('setToken', response.data.token)
-                //this.$store.commit('setMember', response.data.member)
+                this.$store.commit('setToken', response.data.token)
+                this.$store.commit('setMember', response.data.member)
                 this.$router.push('/home')
             }).catch((error) => {
                 alert(error.response.data.message);
