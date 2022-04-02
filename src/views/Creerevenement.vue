@@ -36,6 +36,7 @@
                <div class="field">
                 <label class="label">Date</label>
                 <div class="control">
+                  <Calendar />
                   <input type="date" class="input" v-model="evenement.date" />
                 </div>
               </div>

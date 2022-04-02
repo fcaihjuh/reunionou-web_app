@@ -1,5 +1,6 @@
- <template>
+<template>
   <div>
+    
     <router-view v-if="$store.state.ready" />
     <template v-else>
       <div class="chargement has-text-align">
@@ -10,45 +11,48 @@
   </div>
 </template>
 <script>
+
 export default {
   name: "App",
+  
   mounted() {
-     this.$store.commit("setReady", false);
+    this.$store.commit("setReady", false);
 
-    if(!this.$store.state.token) {
+    if (!this.$store.state.token) {
       this.seConnecter();
-    }
-    else{
-      this.$api.get(`users/${this.$store.state.member.id}/signin`)
-      .then(this.demarrer)
-      .catch(this.seConnecter);
+    } else {
+      this.$api
+        .get(`users/${this.$store.state.member.id}/signin`)
+        .then(this.demarrer)
+        .catch(this.seConnecter);
     }
   },
 
   methods: {
-    ready(){
+    ready() {
       this.$store.commit("setReady", true);
     },
-    demarrer(){
-        this.$api.get("members").then((response) => {
+    demarrer() {
+      this.$api.get("members").then((response) => {
         this.$store.commit("setMembers", response.data);
         this.ready();
       });
     },
     seConnecter() {
-        this.$store.commit("setToken", false);
-        this.$router.push("/connexion");
-        this.ready();
-    }
-  }
-}
+      this.$store.commit("setToken", false);
+      this.$router.push("/connexion");
+      this.ready();
+    },
+  },
+};
 </script>
 <style lang="scss">
-html{
-  height:100%;
+html {
+  height: 100%;
 }
-html, body{
-  min-height:100%;
+html,
+body {
+  min-height: 100%;
 }
 .chargement {
   position: fixed;
