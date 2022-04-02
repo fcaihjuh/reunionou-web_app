@@ -27,7 +27,7 @@
               </div>
               <div class="buttons">
                 <button class="button is-info is-outlined">Modifier</button>
-                <router-link class="button is-outlined" to="/"
+                <router-link class="button is-outlined" to="/home"
                   >Annuler</router-link
                 >
               </div>
@@ -52,11 +52,11 @@ export default {
   },
   methods: {
       //Si aucune modification n'est faite sur le sujet et label, leurs ancienne valeurs restent ainsi.
-    modifierEvenement() {
+    modifierProfil() {
       this.$api
-        .put(`event/${this.idEvenement}`,this.modifierEvenement)
+        .put(`profil/${this.idProfil}`,this.modifierProfil)
         .then(() => {
-        this.$router.push('/');
+        this.$router.push('/home');
         })
         .catch((error) => {
           alert(error.response.data.message);
